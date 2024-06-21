@@ -14,46 +14,45 @@ public class AdPerformanceController {
     @GetMapping("/ad-performance")
     public List<AdPerformance> getAdPerformance() {
         return Arrays.asList(
-                new AdPerformance("Page A", 4000, 2400),
-                new AdPerformance("Page B", 3000, 1398)
+                new AdPerformance("Campaign A", 1000, 300),
+                new AdPerformance("Campaign B", 1500, 400),
+                new AdPerformance("Campaign C", 1200, 350)
         );
     }
 
     static class AdPerformance {
-        private String name;
-        private int uv;
-        private int pv;
+        private String campaign;
+        private int impressions;
+        private int clicks;
 
-        public AdPerformance(String name, int uv, int pv) {
-            this.name = name;
-            this.uv = uv;
-            this.pv = pv;
+        public AdPerformance(String campaign, int impressions, int clicks) {
+            this.campaign = campaign;
+            this.impressions = impressions;
+            this.clicks = clicks;
         }
 
-        // Getters and setters
-
-        public String getName() {
-            return name;
+        public String getCampaign() {
+            return campaign;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setCampaign(String campaign) {
+            this.campaign = campaign;
         }
 
-        public int getUv() {
-            return uv;
+        public int getImpressions() {
+            return impressions;
         }
 
-        public void setUv(int uv) {
-            this.uv = uv;
+        public void setImpressions(int impressions) {
+            this.impressions = impressions;
         }
 
-        public int getPv() {
-            return pv;
+        public int getClicks() {
+            return clicks;
         }
 
-        public void setPv(int pv) {
-            this.pv = pv;
+        public void setClicks(int clicks) {
+            this.clicks = clicks;
         }
     }
 }
